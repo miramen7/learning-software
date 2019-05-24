@@ -1,0 +1,18 @@
+Appium:
+
+applied simple test code on "An introduction to Appium Desktop" on youtube provided with no success. The app keep opened and closed repeatedly.
+-troubleshoot 1:
+download sdk that has the same version with tutorial > to check compatibility between version and testapp file
+
+the problem identified at WebDriverAgent
+
+some other message that maybe lead to error:
+Got response with status 200: {"value":"The application under test with bundle id 'io.appium.TestApp' is not running, possibly crashed","sessionId":"83F5F22D-DDCF-4C5E-916B-CAB08B557AFF","status":889}
+
+the problem narrowed down to bundle id > issue that came along with didn't setting xcode properly prior to use appium
+
+error building webdriveragent in xcode
+
+after several troubleshooting, it turned out that platform version has to be on 10.2. Problem solved.
+
+considering xcode usage which drained much memory capacity on mac, appium will be moved to linux
